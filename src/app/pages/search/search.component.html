@@ -1,0 +1,19 @@
+@if (loading) {
+<wdm-card>
+  <div class="loading">
+    <img src="images/IconeStormTrooper.png" alt="" />
+  </div>
+  <p class="loading-text">Carregando...</p>
+</wdm-card>
+} @else {
+<wdm-card [formGroup]="form">
+  <div class="card-text">
+    <p>Agora, digite seu personagem favorito de Star Wars</p>
+  </div>
+
+  <wdm-input formControlName="inputSearch"></wdm-input>
+
+  <wdm-button [disabled]="form.invalid" (click)="search()">Próximo</wdm-button>
+</wdm-card>
+
+}

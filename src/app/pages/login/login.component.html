@@ -1,0 +1,13 @@
+<wdm-card [formGroup]="form" [image]="true">
+  <div class="card-text">
+    <h1>Olá!</h1>
+    <p>Para começar seu teste, digite um e-mail:</p>
+  </div>
+
+  <wdm-input
+    formControlName="email"
+    placeholder="exemplo@email.com"
+  ></wdm-input>
+
+  <wdm-button [disabled]="form.invalid" path="/search">Próximo</wdm-button>
+</wdm-card>
