@@ -1,0 +1,11 @@
+.ng-untouched {
+  border-color: yellow;
+}
+
+.ng-invalid .ng-touched {
+  border-color: red;
+}
+
+.ng-touched {
+  border-color: green;
+}
