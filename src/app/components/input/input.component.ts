@@ -9,8 +9,11 @@ import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
   styleUrl: './input.component.css',
 })
 export class InputComponent implements ControlValueAccessor {
-  @Input() placeholder = '';
-  inputValue = '';
+  @Input() placeholder: string = '';
+  @Input() error: boolean = false;
+  @Input() errorMessage: string = '';
+
+  inputValue: string = '';
 
   ngControl = inject(NgControl, { optional: true });
   onTouched?: () => {};

@@ -19,8 +19,7 @@
 
 .container-card {
   max-width: 410px;
-  max-height: 400px;
-
+ 
   color: #cecece;
 
   display: flex;
@@ -31,5 +30,5 @@
   background-color: #232323;
   border-radius: 8px;
   padding: 24px;
-  gap: 32px;
+  
 }
