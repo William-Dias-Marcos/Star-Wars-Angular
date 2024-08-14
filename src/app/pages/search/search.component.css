@@ -2,40 +2,40 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
 
 .card-text p {
   font-size: 20px;
 }
 
-.loading {
-  width: 410px;
-  padding-top: 20px;
+.container-input {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px 0;
 }
 
-.loading img {
-  width: 48px;
-  height: 48px;
-
-  animation: fadeInOut 3s infinite;
+.error-search {
+  width: 100%;
+  color: #c47768;
 }
 
-.loading-text {
-  font-size: 20px;
-  font-weight: 600;
+.ng-untouched wdm-input {
+  border: 1px solid #ffe81f;
+  border-radius: 8px;
 }
 
-@keyframes fadeInOut {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.ng-touched.ng-valid wdm-input {
+  border: 1px solid #03dac6;
+  border-radius: 8px;
+}
+
+.ng-touched wdm-input {
+  border: 1px solid #c47768;
+  border-radius: 8px;
+}
+
+.ng-invalid.ng-untouched.ng-pristine wdm-input {
+  border: 1px solid #c47768;
+  border-radius: 8px;
 }

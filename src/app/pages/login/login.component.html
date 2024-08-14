@@ -4,10 +4,12 @@
     <p>Para começar seu teste, digite um e-mail:</p>
   </div>
 
-  <wdm-input
-    formControlName="email"
-    placeholder="exemplo@email.com"
-  ></wdm-input>
+  <div class="container-email">
+    <wdm-input
+      formControlName="email"
+      placeholder="exemplo@email.com"
+    ></wdm-input>
+  </div>
 
   <wdm-button [disabled]="form.invalid" path="/search">Próximo</wdm-button>
 </wdm-card>
