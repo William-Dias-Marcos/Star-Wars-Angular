@@ -1,22 +1,26 @@
-<wdm-loading [loading]="loading"></wdm-loading>
+<div class="container">
+  <wdm-loading [loading]="loading"></wdm-loading>
 
-@if (!loading) {
-<wdm-card [formGroup]="form" [class.ng-invalid]="errorSearch">
-  <div class="card-text">
-    <p>Agora, digite seu personagem favorito de Star Wars</p>
-  </div>
+  @if (!loading) {
+  <wdm-card [formGroup]="form" [class.ng-invalid]="errorSearch">
+    <div class="card-text">
+      <p>Agora, digite seu personagem favorito de Star Wars</p>
+    </div>
 
-  <div class="container-input">
-    <wdm-input
-      formControlName="inputSearch"
-      placeholder="Digite o nome..."
-    ></wdm-input>
+    <div class="container-input">
+      <wdm-input
+        formControlName="inputSearch"
+        placeholder="Digite o nome..."
+      ></wdm-input>
 
-    @if (errorSearch) {
-    <p class="error-search">Personagem inválido</p>
-    }
-  </div>
+      @if (errorSearch) {
+      <p class="error-search">Personagem inválido</p>
+      }
+    </div>
 
-  <wdm-button [disabled]="form.invalid" (click)="search()">Próximo</wdm-button>
-</wdm-card>
-}
+    <wdm-button [disabled]="form.invalid" (click)="search()"
+      >Próximo</wdm-button
+    >
+  </wdm-card>
+  }
+</div>
