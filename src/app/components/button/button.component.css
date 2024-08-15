@@ -48,3 +48,9 @@
   color: rgba(255, 255, 255, 0.32);
   cursor: default;
 }
+
+@media (max-width: 445px) {
+  .button {
+    width: 320px;
+  }
+}
