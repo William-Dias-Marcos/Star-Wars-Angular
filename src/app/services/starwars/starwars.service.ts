@@ -4,7 +4,7 @@ import { forkJoin, Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment.development';
-import { Character, CharacterDetails } from '../../interface/starwars';
+import { CharacterDetails } from '../../interface/starwars';
 
 @Injectable({
   providedIn: 'root',
@@ -25,17 +25,17 @@ export class StarwarsService {
 
   getCharacterByName(name: string): Observable<CharacterDetails> {
     return this.http
-      .get<{ results: Character[] }>(`${this.apiUrl}people/?search=${name}`)
+      .get<{ results: CharacterDetails[] }>(
+        `${this.apiUrl}people/?search=${name}`
+      )
       .pipe(map((response) => response.results[0]));
   }
 
-  getMultipleUrls(urls: string[]): Observable<any[]> {
-    console.log('URLs:', urls); // Verifique se as URLs estão corretas
+  getMultipleUrls<T>(urls: string[]): Observable<(T | null)[]> {
     const requests = urls.map((url) =>
-      this.http.get(url).pipe(
+      this.http.get<T>(url).pipe(
         catchError((error) => {
           console.error(`Erro ao fazer requisição para ${url}`, error);
-          // Retorna um Observable vazio ou um objeto padrão em caso de erro
           return of(null);
         })
       )
